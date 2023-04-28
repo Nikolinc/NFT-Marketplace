@@ -31,6 +31,12 @@ describe("NFTMarketplace", () => {
     expect(Contract.address).to.be.properAddress;
   });
 
+  it("Must be 0 number of unsold nft", async function () {
+    await Contract.fetchMarketItem().then((res: any[]) => {
+      return expect(res.length).to.eq(0);
+    });
+  });
+
   it("Should create NFT token funcion", async function () {
     const tokenURL = "QmNedu14XTwWfGyJ9S7EJrWYAUw9kpnR6vrvVVRWtaYLnq";
 
@@ -41,12 +47,16 @@ describe("NFTMarketplace", () => {
       value: listingPrice,
     });
 
-    alice.getAddress().then((address) => {
+    await alice.getAddress().then((address) => {
       return expect(Token.from).to.eq(address);
     });
 
-    Contract.getListingPrice().then((value: BigNumber) => {
+    await Contract.getListingPrice().then((value: BigNumber) => {
       return expect(Token.value).to.eq(value);
+    });
+
+    await Contract.fetchMarketItem().then((res: any[]) => {
+      return expect(res.length).to.eq(1);
     });
   });
 });
