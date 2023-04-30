@@ -55,8 +55,34 @@ describe("NFTMarketplace", () => {
       return expect(Token.value).to.eq(value);
     });
 
+    //0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+
     await Contract.fetchMarketItem().then((res: any[]) => {
       return expect(res.length).to.eq(1);
     });
+  });
+
+  it("Should function fot resale token", async function () {
+    const tokenURL = "QmNedu14XTwWfGyJ9S7EJrWYAUw9kpnR6vrvVVRWtaYLnq";
+
+    const price: BigNumber = ethers.utils.parseUnits("15", "ether");
+    const listingPrice: BigNumber = Contract.getListingPrice();
+
+    const Token = await Contract.connect(alice).createToken(tokenURL, price, {
+      value: listingPrice,
+    });
+
+    //For the correct use of the test bug fix required
+    // idMarketItem[tokenId].owner == msg.sender,
+    // in ./contracts/NFTMarketplace.sol
+    // on line 108
+    //////////////////////////////////////////////////////////////////////////////////////
+
+    // const TokenReSell = await Contract.connect(alice).reSellToken(0, price, {
+    //   value: listingPrice,
+    // });
+
+    // console.log("TokenReSell", TokenReSell);
+    //////////////////////////////////////////////////////////////////////////////////////
   });
 });
