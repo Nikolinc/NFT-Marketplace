@@ -77,7 +77,13 @@ contract NFTMarketplace is ERC721URIStorage {
     // CREATING MARKET ITEMS
     function createMarketItem(uint256 tokenId, uint256 price) private {
         require(price > 0, "Price must be al lest 1");
-        require(msg.value == listingPrice, "Price must be equal to listing ");
+        require(
+            msg.value == listingPrice,
+            string.concat(
+                "Price must be equal to listing, your price ",
+                Strings.toString(msg.value)
+            )
+        );
 
         idMarketItem[tokenId] = MarketItem(
             tokenId,
@@ -151,6 +157,29 @@ contract NFTMarketplace is ERC721URIStorage {
                 MarketItem storage currentItem = idMarketItem[currentId];
                 items[currentIndex] = currentItem;
                 currentIndex += 1;
+            }
+        }
+        return items;
+    }
+
+    //PURCHASE ITEM
+    function fetchMyNFT() public view returns (MarketItem[] memory) {
+        uint256 totalCount = _tokenIds.current();
+        uint itemCount = 0;
+        uint currentIndex = 0;
+
+        for (uint i = 0; i < totalCount; i++) {
+            if (idMarketItem[i + 1].owner == msg.sender) {
+                itemCount += 1;
+            }
+        }
+        MarketItem[] memory items = new MarketItem[](itemCount);
+        for (uint256 i = 0; i < totalCount; i++) {
+            if (idMarketItem[i + 1].owner == msg.sender) {
+                uint256 currentId = i + 1;
+                MarketItem storage currentItem = idMarketItem[currentId];
+                items[currentIndex] = currentItem;
+                currentIndex++;
             }
         }
         return items;
