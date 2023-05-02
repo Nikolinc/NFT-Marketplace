@@ -40,6 +40,6 @@
     "@openzeppelin/contracts": "^4.8.3",
     "chai": "^4.3.7",
     "mocha": "^10.2.0",
-    "solidity-coverage": "^0.7.22"
+    "solidity-coverage": "^0.8.2"
   }
 }
