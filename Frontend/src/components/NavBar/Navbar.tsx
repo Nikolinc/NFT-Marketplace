@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 //Component
 import {
@@ -30,8 +31,10 @@ const Navbar = () => {
   const [profile, setProfile] = useState(false);
   const [sideBar, setSideBar] = useState(false);
 
+  const { t } = useTranslation("namespace-name");
+
   return (
-    <div className="flex px-10 bg-Davy-Grey py-1 pt-1 justify-between">
+    <div className="flex px-10 bg-Davy-Grey py-1 pt-1 justify-between drop-shadow-lg">
       <div className="flex items-center gap-24 pl-16">
         {" "}
         <div className="logo flex text-Turquoise gap-4">
@@ -42,7 +45,7 @@ const Navbar = () => {
         </div>
         <div className="relative flex items-center mr-32 ">
           <label htmlFor="UserEmail" className="sr-only ml-25">
-            Search ...
+            {t("Search")}...
           </label>
 
           <input
@@ -60,9 +63,9 @@ const Navbar = () => {
 
       <div className="flex gap-6 text-Turquoise text-xl font-semibold items-center ">
         <Contact />
-        <p className="cursor-pointer">About</p>
-        <p className="cursor-pointer">Discover</p>
-        <p className="cursor-pointer">Help</p>
+        <p className="cursor-pointer">{t("About")}</p>
+        <p className="cursor-pointer">{t("Discover")}</p>
+        <p className="cursor-pointer">{t("Help")}</p>
       </div>
       <div className="flex items-center gap-6 mr-14">
         <IconContext.Provider
@@ -72,10 +75,10 @@ const Navbar = () => {
 
           <MdNotifications size={30} />
 
-          <FaUserTie size={30} />
+          <Profile />
         </IconContext.Provider>
         <Button
-          text="Create"
+          text={t("Create")}
           callback={() => {
             console.log("test");
           }}
