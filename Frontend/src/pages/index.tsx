@@ -1,5 +1,7 @@
-import Layout from "@/components/layout";
 import React from "react";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+
 
 const Home = () => {
   return (

@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import Navbar from "@/components/NavBar/Navbar";
 import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
+import Footer from "@/components/Footer/footer";
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
@@ -16,6 +17,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
     </Head>
     <Navbar />
     <Component {...pageProps} />
+    <Footer />
   </>
 );
 export default appWithTranslation(MyApp);
