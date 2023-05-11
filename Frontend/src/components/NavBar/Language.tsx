@@ -53,7 +53,7 @@ function Language() {
               </label>
               <label
                 htmlFor="English"
-                className="ml-2 text-Outer-Space font-medium text-sm "
+                className="ml-4 text-left text-Outer-Space font-medium text-sm "
               >
                 English
               </label>
@@ -81,7 +81,7 @@ function Language() {
               </label>
               <label
                 htmlFor="Russian"
-                className="ml-2 text-Outer-Space font-medium text-sm "
+                className="ml-4 text-left text-Outer-Space font-medium text-sm "
               >
                 Russian
               </label>
@@ -106,7 +106,7 @@ function Language() {
               </label>
               <label
                 htmlFor="Dutch"
-                className=" text-Outer-Space font-medium text-sm "
+                className="ml-4 text-left text-Outer-Space font-medium text-sm "
               >
                 Dutch
               </label>
