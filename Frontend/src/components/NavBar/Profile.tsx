@@ -13,7 +13,7 @@ const Profile = () => {
 
   return (
     <button
-      className="font-semibold py-2 px-4 rounded inline-flex items-center"
+      className="font-semibold py-2 px-2 rounded inline-flex items-center"
       onClick={() => setConnect(!connect)}
     >
       {connect ? (

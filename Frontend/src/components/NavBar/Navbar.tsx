@@ -9,11 +9,11 @@ import Button from "../Button";
 
 // Icons
 import { BsSearch } from "react-icons/bs";
-import { MdNotifications, MdTranslate } from "react-icons/md";
 import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
 import { FaUserTie } from "react-icons/fa";
 import logo from "../../public/logo.svg";
 import { IconContext } from "react-icons";
+import Notifications from "./Notifications ";
 
 const Navbar = () => {
   //USESTATE COMPONENT
@@ -64,9 +64,7 @@ const Navbar = () => {
           value={{ color: "#A6A6A6", className: "global-class-name" }}
         >
           <Language />
-
-          <MdNotifications size={30} />
-
+          <Notifications />
           <Profile />
         </IconContext.Provider>
         <Button
