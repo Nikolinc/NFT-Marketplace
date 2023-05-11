@@ -4,15 +4,7 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 //Component
-import {
-  Discover,
-  HelpCenter,
-  Notification,
-  Profile,
-  SideBar,
-  Language,
-  Contact,
-} from "./index";
+import { Profile, Language, Contact } from "./index";
 import Button from "../Button";
 
 // Icons
@@ -34,7 +26,7 @@ const Navbar = () => {
   const { t } = useTranslation("namespace-name");
 
   return (
-    <div className="flex px-10 bg-Davy-Grey py-1 pt-1 justify-between drop-shadow-lg">
+    <div className="flex px-10 bg-Davy-Grey py-1 pt-1 justify-between drop-shadow-lg sticky top-0 z-50">
       <div className="flex items-center gap-24 pl-16">
         {" "}
         <div className="logo flex text-Turquoise gap-4">
