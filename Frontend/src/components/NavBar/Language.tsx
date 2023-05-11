@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { MdTranslate } from "react-icons/md";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 function Language() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("Option 1");
+  const [selectedOption, setSelectedOption] = useState("English");
+  const { t, i18n } = useTranslation("namespace-name");
 
   const handleOptionChange = (event: React.FormEvent<EventTarget>) => {
     let target = event.target as HTMLInputElement;
@@ -13,9 +17,10 @@ function Language() {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    console.log(selectedOption);
-  }, [selectedOption]);
+  const changeLanguage = (lng: string) => {
+    console.log("lng", lng);
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <div className="relative">
@@ -29,81 +34,84 @@ function Language() {
       </button>
       {isOpen && (
         <div className="absolute bg-Chinese-Silver text-Outer-Space rounded mt-1 py-1 pl-3 w-40">
-          <div className="flex items-center">
+          <button className="flex items-center">
             <input
               type="radio"
-              id="option1"
+              id="English"
               name="options"
-              value="Option 1"
-              checked={selectedOption === "Option 1"}
+              value="English"
+              checked={selectedOption === "English"}
               onChange={handleOptionChange}
               className="form-radio h-4 w-4 transition duration-150 ease-in-out"
             />
             <div className="grid grid-cols-1">
               <label
-                htmlFor="option1"
+                htmlFor="English"
                 className="ml-2 text-Outer-Space font-semibold text-lx "
               >
                 English
               </label>
               <label
-                htmlFor="option1"
+                htmlFor="English"
                 className="ml-2 text-Outer-Space font-medium text-sm "
               >
                 English
               </label>
             </div>
-          </div>
-          <div className="flex items-center mt-2">
+          </button>
+          <button
+            className="flex items-center mt-2"
+            onClick={() => changeLanguage("ru")}
+          >
             <input
               type="radio"
-              id="option2"
+              id="Russian"
               name="options"
-              value="Option 2"
-              checked={selectedOption === "Option 2"}
+              value="Russian"
+              checked={selectedOption === "Russian"}
               onChange={handleOptionChange}
               className="form-radio h-4 w-4 text-gray-600 transition duration-150 ease-in-out"
             />
             <div className="grid grid-cols-1">
               <label
-                htmlFor="option2"
+                htmlFor="Russian"
                 className="ml-2 text-Outer-Space font-semibold text-lx "
               >
                 Русский
               </label>
               <label
-                htmlFor="option1"
+                htmlFor="Russian"
                 className="ml-2 text-Outer-Space font-medium text-sm "
               >
                 Russian
               </label>
             </div>
-          </div>
-          <div className="flex items-center mt-2">
+          </button>
+          <button className="flex items-center mt-2">
             <input
               type="radio"
-              id="option3"
+              id="Dutch"
               name="options"
-              value="Option 3"
-              checked={selectedOption === "Option 3"}
+              value="Dutch"
+              checked={selectedOption === "Dutch"}
               onChange={handleOptionChange}
               className="form-radio h-4 w-4 text-gray-600 transition duration-150 ease-in-out"
             />
             <div className="grid grid-cols-1">
               <label
-                htmlFor="option3"
+                htmlFor="Dutch"
                 className="ml-2 text-Outer-Space font-semibold text-lx "
               >
                 Nederlands
               </label>
               <label
-                htmlFor="option3"
-                className="ml-2 text-Outer-Space font-medium text-sm "
+                htmlFor="Dutch"
+                className=" text-Outer-Space font-medium text-sm "
               >
                 Dutch
               </label>
             </div>
-          </div>
+          </button>
         </div>
       )}
     </div>
