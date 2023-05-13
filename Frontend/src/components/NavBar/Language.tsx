@@ -26,10 +26,10 @@ function Language() {
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className="font-semibold py-2 px-4 rounded inline-flex items-center"
+        className="font-semibold py-2 px-2 rounded inline-flex items-center"
       >
         <span className="mr-1">
-          <MdTranslate size={30} className="mr-20 cursor-pointer" />
+          <MdTranslate size={30} className="cursor-pointer" />
         </span>
       </button>
       {isOpen && (
