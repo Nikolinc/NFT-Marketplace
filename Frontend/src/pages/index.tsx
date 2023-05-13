@@ -1,11 +1,11 @@
 import React from "react";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
-
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Home = () => {
   return (
-    <div className="bg-Outer-Space h-[95vh] text-Chinese-Silver">Home</div>
+    <div className="bg-Outer-Space  text-Chinese-Silver  h-[72vh] ">
+      Home
+    </div>
   );
 };
 

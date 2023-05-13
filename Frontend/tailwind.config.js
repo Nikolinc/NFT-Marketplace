@@ -11,6 +11,7 @@ module.exports = {
         "regal-blue": "#243c5a",
         "Davy-Grey": "#575757",
         "Turquoise": "#4CFAEF",
+        "Medium-Sky-Blue": "#89E4E6",
         "Black-Olive": "#3C3C3C",
         "Charleston-Green": "#2C2C2C",
         "Chinese-Silver": "#A6A6A6",
@@ -19,5 +20,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 };

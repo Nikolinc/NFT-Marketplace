@@ -15,9 +15,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
         content="I hope this tutorial is helpful for you"
       />
     </Head>
-    <Navbar />
-    <Component {...pageProps} />
-    <Footer />
+   
+      <Navbar />
+      <Component {...pageProps} />
+      <Footer />
+    
   </>
 );
 export default appWithTranslation(MyApp);
