@@ -1,0 +1,24 @@
+{
+  "name": "nft-marketplace",
+  "version": "1.0.0",
+  "description": "Is a web application for buying and selling NFT (non-fungible tokens) pictures",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd ./Frontend && next dev",
+    "build": "cd ./Frontend && next build",
+    "cpt": "cd ./NFTSmartContract && npx hardhat compile",
+    "test": "cd ./NFTSmartContract && npx hardhat test",
+    "start": "cd ./NFTSmartContract && npx hardhat run",
+    "node": "cd ./NFTSmartContract && npx hardhat node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikolinc/-NFT-Marketplace.git"
+  },
+  "author": "Nikolinc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikolinc/-NFT-Marketplace/issues"
+  },
+  "homepage": "https://github.com/Nikolinc/-NFT-Marketplace#readme"
+}

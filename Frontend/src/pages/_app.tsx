@@ -3,7 +3,7 @@ import "../styles/globals.css";
 import Navbar from "@/components/NavBar/Navbar";
 import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
-import Footer from "@/components/Footer/footer";
+import Footer from "@/components/Footer/Footer";
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
@@ -15,11 +15,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
         content="I hope this tutorial is helpful for you"
       />
     </Head>
-   
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
-    
+
+    <Navbar />
+    <Component {...pageProps} />
+    <Footer />
   </>
 );
 export default appWithTranslation(MyApp);

@@ -4,8 +4,10 @@
   "description": "Is a web application for buying and selling NFT (non-fungible tokens) pictures",
   "main": "index.js",
   "scripts": {
-    "complite": "npx hardhat compile",
-    "test": "npx hardhat test"
+    "cpt": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "start": "npx hardhat run",
+    "node": "npx hardhat node"
   },
   "repository": {
     "type": "git",
