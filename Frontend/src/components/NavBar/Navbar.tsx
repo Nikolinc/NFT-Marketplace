@@ -1,29 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { useTranslation } from "next-i18next";
-
 //Component
 import { Profile, Language, Contact, Menu, Search } from "./index";
 import Button from "../Button";
 
 // Icons
-import { BsSearch } from "react-icons/bs";
-import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
-import { FaUserTie } from "react-icons/fa";
+
 import logo from "../../public/logo.svg";
 import { IconContext } from "react-icons";
 import Notifications from "./Notifications ";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
-  //USESTATE COMPONENT
-  const [discover, setDiscover] = useState(false);
-  const [helpCenter, setHelpCenter] = useState(false);
-  const [notification, setNotification] = useState(false);
-  const [profile, setProfile] = useState(false);
-  const [sideBar, setSideBar] = useState(false);
-
-  const { t } = useTranslation("namespace-name");
+  const { t } = useTranslation("default");
 
   return (
     <div className="flex px-10 bg-Davy-Grey py-1 pt-1 justify-between drop-shadow-lg sticky top-0 z-50">
@@ -39,7 +28,7 @@ const Navbar = () => {
           </a>
         </div>
         <div className="hidden lg:block">
-        <Search/>
+          <Search />
         </div>
       </div>
       <div className="hidden 2xl:block">
@@ -63,7 +52,7 @@ const Navbar = () => {
           <Profile />
         </IconContext.Provider>
 
-        <div className="md:block hidden">
+        <div className="md:block hidden text-xl">
           <Button
             text={t("Create")}
             callback={() => {

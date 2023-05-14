@@ -5,7 +5,7 @@ function Search() {
   return (
     <div>
       {" "}
-      <div className="relative flex items-center mr-32 ">
+      <div className="relative flex items-center ">
         <label htmlFor="UserEmail" className="sr-only ml-25">
           Search
         </label>

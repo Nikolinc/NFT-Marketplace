@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { MdTranslate } from "react-icons/md";
-import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "react-i18next";
 
 function Language() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("English");
-  const { t, i18n } = useTranslation("namespace-name");
+  const { t, i18n } = useTranslation("default");
 
   const handleOptionChange = (event: React.FormEvent<EventTarget>) => {
     let target = event.target as HTMLInputElement;

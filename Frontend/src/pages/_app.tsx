@@ -8,7 +8,7 @@ import Footer from "@/components/Footer/Footer";
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
     <Head>
-      <link rel="shortcut icon" href="../public/favicon.svg" />
+      <link rel="shortcut icon" href="@/public/favicon.svg" />
       <title>NFT Marketplace</title>
       <meta
         name="description"
