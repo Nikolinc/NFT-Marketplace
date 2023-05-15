@@ -33,7 +33,7 @@ function Language() {
         </span>
       </button>
       {isOpen && (
-        <div className="absolute bg-Chinese-Silver text-Outer-Space rounded mt-1 py-1 pl-3 w-40">
+        <div className="absolute bg-Chinese-Silver text-Outer-Space rounded mt-1 py-1 pl-3 w-40 shadow-2xl">
           <button className="flex items-center">
             <input
               type="radio"

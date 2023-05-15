@@ -58,6 +58,7 @@ const Navbar = () => {
             callback={() => {
               console.log("test");
             }}
+            classname=""
           />
         </div>
       </div>

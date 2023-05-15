@@ -55,6 +55,7 @@ function Menu() {
                   callback={() => {
                     console.log("test");
                   }}
+                  classname=""
                 />
               </div>
             </div>
