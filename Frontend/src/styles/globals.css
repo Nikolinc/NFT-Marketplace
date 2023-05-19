@@ -4,6 +4,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  overflow-x: hidden;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -38,4 +39,14 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--tertiary);
+}
+
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
 }
