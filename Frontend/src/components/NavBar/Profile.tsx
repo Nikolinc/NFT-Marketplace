@@ -1,4 +1,4 @@
-import { useConnect } from "@/hooks/useMetamask";
+import { Connect } from "@/service/MetaMask";
 import React, { useEffect, useState } from "react";
 import { FaUserTie } from "react-icons/fa";
 
@@ -7,7 +7,7 @@ const Profile = () => {
 
   useEffect(() => {
     if (connect) {
-      useConnect();
+      Connect();
     }
   }, [connect]);
 
