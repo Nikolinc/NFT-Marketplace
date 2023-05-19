@@ -1,3 +1,12 @@
 {
-  "extends": ["next/babel", "next/core-web-vitals"]
+  "extends": ["next/babel", "next/core-web-vitals"],
+  "plugins": [
+    // ...
+    "react-hooks"
+  ],
+  "rules": {
+    // ...
+    "react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
+    "react-hooks/exhaustive-deps": "warn" // Проверяем зависимости эффекта
+  }
 }

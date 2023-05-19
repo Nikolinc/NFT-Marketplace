@@ -18,6 +18,7 @@ module.exports = {
         "Chinese-Silver": "#A6A6A6",
         "Outer-Space": "#444",
         "Chinese-Silver": "#CBCBCB",
+        "Light-Silver":"#D7D7D7 "
       },
     },
   },
