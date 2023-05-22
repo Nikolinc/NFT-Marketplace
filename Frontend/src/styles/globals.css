@@ -50,3 +50,13 @@ body {
   user-select: none; /* Non-prefixed version, currently
                                   not supported by any browser */
 }
+
+.titleContent {
+  opacity: 1;
+  transform: perspective(1000px);
+}
+.titleContent:hover {
+  transition: none;
+  transform: perspective(1000px) rotateY(var(--px)) rotateX(var(--py))
+    scale(1.1);
+}

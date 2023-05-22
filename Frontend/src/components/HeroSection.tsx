@@ -31,7 +31,7 @@ function HeroSection() {
             src={nftObject[0].image}
             key={nftObject[0].key}
             alt={nftObject[0].name}
-            className={`unselectable aspect-square rounded-xl object-cover shadow-xl slideContent w-full h-full row-span-3 mt-12`}
+            className={`unselectable aspect-square rounded-xl object-cover shadow-xl titleContent w-full h-full row-span-3 mt-12`}
           />
         </Tilt>
         <Tilt classname="w-52 h-72">
@@ -39,7 +39,7 @@ function HeroSection() {
             src={nftObject[1].image}
             key={nftObject[1].key}
             alt={nftObject[1].name}
-            className={`unselectable aspect-square rounded-xl object-cover shadow-xl slideContent w-full h-full `}
+            className={`unselectable aspect-square rounded-xl object-cover shadow-xl titleContent w-full h-full `}
           />
         </Tilt>
         <Tilt classname="w-64 h-80">
@@ -47,7 +47,7 @@ function HeroSection() {
             src={nftObject[2].image}
             key={nftObject[2].key}
             alt={nftObject[2].name}
-            className={`unselectable aspect-square rounded-xl object-cover shadow-xl slideContent w-full h-full `}
+            className={`unselectable aspect-square rounded-xl object-cover shadow-xl titleContent w-full h-full `}
           />
         </Tilt>
       </div>
