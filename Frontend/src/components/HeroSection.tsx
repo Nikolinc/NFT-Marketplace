@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Button from "./Button";
 import Image from "next/image";
-import { nftObject } from "@/assets";
+import useTilt from "@/hooks/useTilt";
+import uImage from "@/assets";
+import Tilt from "./Tilt";
 
 function HeroSection() {
+  const nftObject = uImage();
   return (
     <div className="grid grid-cols-1 mt-20 items-start w-[70%] gap-10 md:grid-cols-2 unselectable">
       <div className="text-7xl text-Turquoise font-extrabold  h-full pt-6 mt-12">
@@ -22,25 +25,31 @@ function HeroSection() {
           ></Button>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-2 ">
-        <Image
-          src={nftObject[0].image}
-          key={nftObject[0].key}
-          alt={nftObject[0].name}
-          className="unselectable aspect-square w-72 h-96 rounded-xl object-cover row-span-3 shadow-xl mt-12 "
-        />
-        <Image
-          src={nftObject[1].image}
-          key={nftObject[1].key}
-          alt={nftObject[1].name}
-          className="unselectable aspect-square w-52 h-72  rounded-xl object-cover shadow-xl"
-        />
-        <Image
-          src={nftObject[2].image}
-          key={nftObject[2].key}
-          alt={nftObject[2].name}
-          className="unselectable aspect-square  w-64 h-80 rounded-xl object-cover shadow-xl"
-        />
+      <div className="grid grid-cols-2  gap-6 md:grid-cols-2 ">
+        <Tilt classname="w-60 h-96 row-span-3 mt-12">
+          <Image
+            src={nftObject[0].image}
+            key={nftObject[0].key}
+            alt={nftObject[0].name}
+            className={`unselectable aspect-square rounded-xl object-cover shadow-xl slideContent w-full h-full row-span-3 mt-12`}
+          />
+        </Tilt>
+        <Tilt classname="w-52 h-72">
+          <Image
+            src={nftObject[1].image}
+            key={nftObject[1].key}
+            alt={nftObject[1].name}
+            className={`unselectable aspect-square rounded-xl object-cover shadow-xl slideContent w-full h-full `}
+          />
+        </Tilt>
+        <Tilt classname="w-64 h-80">
+          <Image
+            src={nftObject[2].image}
+            key={nftObject[2].key}
+            alt={nftObject[2].name}
+            className={`unselectable aspect-square rounded-xl object-cover shadow-xl slideContent w-full h-full `}
+          />
+        </Tilt>
       </div>
     </div>
   );
