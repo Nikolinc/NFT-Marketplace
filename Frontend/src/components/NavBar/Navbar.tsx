@@ -9,11 +9,8 @@ import Button from "../Button";
 import logo from "../../public/logo.svg";
 import { IconContext } from "react-icons";
 import Notifications from "./Notifications";
-import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
-  const { t } = useTranslation("default");
-
   return (
     <div className="flex px-10 bg-Davy-Grey py-1 pt-1 justify-between drop-shadow-lg sticky top-0 z-50 unselectable">
       <div className="flex items-center gap-24 pl-2 md:pl-6 xl:pl-16">
@@ -35,14 +32,12 @@ const Navbar = () => {
         <div className="flex gap-6 text-Turquoise text-xl font-semibold items-center ">
           <Contact />
           <p className="cursor-pointer hover:border-b border-Turquoise">
-            {t("About")}
+            About
           </p>
           <p className="cursor-pointer hover:border-b border-Turquoise">
-            {t("Discover")}
+            Discover
           </p>
-          <p className="cursor-pointer hover:border-b border-Turquoise">
-            {t("Help")}
-          </p>
+          <p className="cursor-pointer hover:border-b border-Turquoise">Help</p>
         </div>
       </div>
 
@@ -60,7 +55,7 @@ const Navbar = () => {
 
         <div className="md:block hidden text-xl">
           <Button
-            text={t("Create")}
+            text="Create"
             callback={() => {
               console.log("test");
             }}

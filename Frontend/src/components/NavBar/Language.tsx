@@ -85,7 +85,7 @@ function Modal({ opened, triggerRef, onClose }: ITooltipProps) {
               onChange={handleOptionChange}
               className="form-radio h-4 w-4 transition duration-150 ease-in-out rounded-full bg-gray-800 accent-Turquoise "
             />
-            <div className="grid grid-cols-1">
+            <div className="grid grid-cols-1 border-Turquoise hover:border-b">
               <label
                 htmlFor={lan.name}
                 className="ml-2 text-white font-semibold text-lx "

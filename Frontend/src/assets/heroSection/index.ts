@@ -2,13 +2,8 @@ import cat from "./cat.jpg";
 import addiction from "./addiction.jpg";
 import russian_icon from "./russian_icon.jpg";
 import spirale from "./spirale.jpg";
-import { useState } from "react";
 
 function uImage() {
-  const [aAddiction, sAddoction] = useState(false);
-  const [aIcon, sIcon] = useState(false);
-  const [aSpirale, sSpirale] = useState(false);
-
   const nftObject = [
     {
       name: "addiction",
