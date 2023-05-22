@@ -14,7 +14,6 @@ function useModal({
     if (!enabled) {
       return;
     }
-    console.log("attach event listener");
     const handleClick = (e: MouseEvent | TouchEvent) => {
       const target = e.target;
       if (!(target instanceof Node)) {
