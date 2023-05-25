@@ -3,13 +3,21 @@ import { User } from './schemas/user.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, ObjectId } from 'mongoose';
 import { CreateUserDTO } from './dto/create-user.dto';
+import { FileService, FileType } from 'src/file/file.service';
 
 @Injectable()
 export class UserService {
-  constructor(@InjectModel(User.name) private UserModel: Model<User>) {}
+  constructor(
+    @InjectModel(User.name) private UserModel: Model<User>,
+    private fileService: FileService,
+  ) {}
 
-  async create(CreateUserDTO: CreateUserDTO): Promise<User> {
-    const createdCat = new this.UserModel(CreateUserDTO);
+  async create(CreateUserDTO: CreateUserDTO, avatarFile): Promise<User> {
+    const avatarPath = this.fileService.createFile(FileType.IMAGE, avatarFile);
+    const createdCat = await this.UserModel.create({
+      ...CreateUserDTO,
+      Avatar: avatarPath,
+    });
     return createdCat.save();
   }
 

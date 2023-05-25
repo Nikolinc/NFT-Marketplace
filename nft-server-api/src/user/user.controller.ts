@@ -1,15 +1,28 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  UploadedFiles,
+  UseInterceptors,
+} from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDTO } from './dto/create-user.dto';
 import { ObjectId } from 'mongoose';
+import { FileFieldsInterceptor } from '@nestjs/platform-express';
 
 @Controller('/user')
 export class UserController {
   constructor(private UserService: UserService) {}
 
   @Post()
-  create(@Body() CreateUserDTO: CreateUserDTO) {
-    return this.UserService.create(CreateUserDTO);
+  @UseInterceptors(FileFieldsInterceptor([{ name: 'avatar', maxCount: 1 }]))
+  create(@UploadedFiles() files, @Body() CreateUserDTO: CreateUserDTO) {
+    console.log('file', files);
+    const { avatar } = files;
+    return this.UserService.create(CreateUserDTO, avatar[0]);
   }
 
   @Get('/all')
