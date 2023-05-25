@@ -30,6 +30,9 @@ export class UserService {
   }
 
   async delete(id: ObjectId): Promise<any> {
+    const avatar = await this.UserModel.findById(id);
+    console.log(avatar);
+    this.fileService.remoweFile(avatar.Avatar);
     const user = await this.UserModel.findByIdAndDelete(id);
     return user._id;
   }

@@ -23,6 +23,11 @@ export class FileService {
   }
 
   remoweFile(fileName) {
-    return fileName;
+    try {
+      const fileParh = path.resolve(__dirname, '..', 'static');
+      fs.unlinkSync(`${fileParh}/${fileName}`);
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
   }
 }
