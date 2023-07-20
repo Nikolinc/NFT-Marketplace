@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Button from "./Button";
 import Image from "next/image";
-import useTilt from "@/hooks/useTilt";
-import Tilt from "./Tilt";
+import pngwing from "../assets/heroSection/pngwing.png";
 import uImage from "@/assets/heroSection";
 
 function HeroSection() {
@@ -26,30 +24,7 @@ function HeroSection() {
         </div>
       </div>
       <div className="grid pl-12 gap-6 grid-cols-2 ">
-        <Tilt classname="w-60  h-96 row-span-3 mt-12 flex justify-end">
-          <Image
-            src={nftObject[0].image}
-            key={nftObject[0].key}
-            alt={nftObject[0].name}
-            className={`unselectable aspect-square rounded-xl object-cover shadow-xl titleContent w-full h-full row-span-3 `}
-          />
-        </Tilt>
-        <Tilt classname="w-52   h-72 mt-3">
-          <Image
-            src={nftObject[1].image}
-            key={nftObject[1].key}
-            alt={nftObject[1].name}
-            className={`unselectable aspect-square rounded-xl object-cover shadow-xl titleContent w-full h-full `}
-          />
-        </Tilt>
-        <Tilt classname="w-52  h-80">
-          <Image
-            src={nftObject[2].image}
-            key={nftObject[2].key}
-            alt={nftObject[2].name}
-            className={`unselectable aspect-square rounded-xl object-cover shadow-xl titleContent w-full h-full `}
-          />
-        </Tilt>
+        <Image src={pngwing} alt="pngwing" />
       </div>
     </div>
   );

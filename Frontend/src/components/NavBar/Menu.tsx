@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { CgMenuRight } from "react-icons/cg";
 import { Contact, Language, Search } from "./index";
-import { useTranslation } from "next-i18next";
 import { IconContext } from "react-icons";
 import Button from "../Button";
 
 function Menu() {
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslation("namespace-name");
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -34,9 +32,9 @@ function Menu() {
             <div className="pr-10 mb-5">
               {" "}
               <Contact />
-              <p className="cursor-pointer py-3">{t("About")}</p>
-              <p className="cursor-pointer py-3">{t("Discover")}</p>
-              <p className="cursor-pointer py-3">{t("Help")}</p>
+              <p className="cursor-pointer py-3">About</p>
+              <p className="cursor-pointer py-3">Discover</p>
+              <p className="cursor-pointer py-3">Help</p>
             </div>
             <div className="pr-10 pt-6 w-full border-t-2 border-Chinese-Silver flex items-center justify-between text-lg h-20">
               <div className="flex text-Chinese-Silver text-xl items-center mr-10 ">
@@ -51,7 +49,7 @@ function Menu() {
               <div className="h-5  flex items-center">
                 {" "}
                 <Button
-                  text={t("Create")}
+                  text={"Create"}
                   callback={() => {
                     console.log("test");
                   }}

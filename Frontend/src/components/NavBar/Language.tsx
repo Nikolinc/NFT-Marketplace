@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { MdTranslate } from "react-icons/md";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
 import useModal from "@/hooks/useModal";
 
