@@ -1,14 +1,16 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from './schemas/user.schema';
 import { Model, ObjectId } from 'mongoose';
 import { FileService, FileType } from 'src/shared/file/file.service';
 import { CreateUserDTO } from './dto/create-user.dto';
+import { RoleService } from '../role/role.service';
 
 @Injectable()
 export class UserService {
   constructor(
     @InjectModel(User.name) private UserModel: Model<User>,
+    private roleService: RoleService,
     private fileService: FileService,
   ) {}
 
@@ -45,5 +47,16 @@ export class UserService {
     this.fileService.remoweFile(avatar.Avatar);
     const user = await this.UserModel.findByIdAndDelete(id);
     return user._id;
+  }
+
+  async addRole(CreateRoleDTO: CreateRoleDTO) {
+    const user = await this.UserModel.findById(CreateRoleDTO.userId);
+    const role = await this.roleService.getRoleByValue(CreateRoleDTO.value);
+
+    if (role && user) {
+      await user.$add('role', role.id);
+      return CreateRoleDTO;
+    }
+    throw new HttpException('Role or User not found', HttpStatus.NOT_FOUND);
   }
 }

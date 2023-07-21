@@ -4,6 +4,7 @@ import { UserModule } from './modules/user/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import * as path from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { RoleModule } from './modules/role/role.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
     MongooseModule.forRoot('mongodb://127.0.0.1:27017/NFTMarketplace'),
     UserModule,
     FileModule,
+    RoleModule,
   ],
 })
 export class AppModule {}
